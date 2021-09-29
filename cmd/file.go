@@ -31,6 +31,8 @@ func (f *FileHandler) WriteAll(lines []string) error {
 	}
 	defer fp.Close()
 
-	fp.WriteString(strings.Join(lines, "\n"))
+	if _, err := fp.WriteString(strings.Join(lines, "\n")); err != nil {
+		return err
+	}
 	return fp.Sync()
 }

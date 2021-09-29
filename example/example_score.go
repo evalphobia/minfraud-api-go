@@ -8,6 +8,7 @@ import (
 	"github.com/evalphobia/minfraud-api-go/minfraud"
 )
 
+// nolint
 func main() {
 	var ipaddr string
 	flag.StringVar(&ipaddr, "ipaddr", "", "set target ip address")
