@@ -46,7 +46,7 @@ type CreditCardData struct {
 	IssuerIDNumber        string `json:"issuer_id_number,omitempty"`
 	Last4Digits           string `json:"last_4_digits,omitempty"`
 	Token                 string `json:"token,omitempty"`
-	Was3DSecureSuccessful bool   `json:"was_3d_secure_successful,omitempty"`
+	Was3DSecureSuccessful *bool   `json:"was_3d_secure_successful,omitempty"`
 }
 
 type DeviceData struct {
@@ -71,11 +71,11 @@ type EventData struct {
 
 type OrderData struct {
 	AffiliateID    string  `json:"affiliateID,omitempty"`
-	Amount         float64 `json:"amount,omitempty"`
+	Amount         *float64 `json:"amount,omitempty"`
 	Currency       string  `json:"currency,omitempty"`
 	DiscountCode   string  `json:"discount_code,omitempty"`
-	HasGiftMessage bool    `json:"has_gift_message,omitempty"`
-	IsGift         bool    `json:"is_gift,omitempty"`
+	HasGiftMessage *bool    `json:"has_gift_message,omitempty"`
+	IsGift         *bool    `json:"is_gift,omitempty"`
 	ReferrerURI    string  `json:"referrer_uri,omitempty"`
 	SubaffiliateID string  `json:"subaffiliate_id,omitempty"`
 }
@@ -83,7 +83,7 @@ type OrderData struct {
 type PaymentData struct {
 	DeclineCode   string `json:"decline_code,omitempty"`
 	Processor     string `json:"processor,omitempty"`
-	WasAuthorized bool   `json:"was_authorized,omitempty"`
+	WasAuthorized *bool   `json:"was_authorized,omitempty"`
 }
 
 type ShippingData struct {
@@ -104,6 +104,6 @@ type ShippingData struct {
 type ShoppingCartData struct {
 	Category string  `json:"category,omitempty"`
 	ItemID   string  `json:"item_id,omitempty"`
-	Price    float64 `json:"price,omitempty"`
-	Quantity int64   `json:"quantity,omitempty"`
+	Price    *float64 `json:"price,omitempty"`
+	Quantity *int64   `json:"quantity,omitempty"`
 }
